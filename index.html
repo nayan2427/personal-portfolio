@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayan Vishwakarma | Software Engineer & Full-Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="progress-bar"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Nayan.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="ticker-pill">Engineering Matrix V3.0</div>
+            <h1>Hi, I'm <span>Nayan Vishwakarma</span></h1>
+            <h2><span id="typing"></span></h2>
+            <p>
+                Building high-performance full-stack applications with modular architecture, robust layout layers, and
+                smooth interactive animations.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">Explore Workspace</a>
+                <a href="assets/resume.pdf" class="btn secondary" download>Download Resume</a>
+            </div>
+        </div>
+
+        <!-- Right Container: Holds BOTH Matrix Background and Profile Photo -->
+        <div class="hero-image glass webgl-container"
+            style="position: relative; min-height: 400px; padding: 0; overflow: hidden; flex: 1; display: flex; justify-content: center; align-items: center;">
+
+            <!-- 1. 3D Matrix Background -->
+            <canvas id="webgl-matrix-canvas"
+                style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events: none; z-index: 1;"></canvas>
+
+            <!-- 2. Floating Profile Image Wrapper -->
+            <div
+                style="position: relative; z-index: 2; width: 280px; height: 280px; display: flex; justify-content: center; align-items: center;">
+                <img src="assets/profile.jpg" alt="Nayan Vishwakarma"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--accent); box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="section reveal">
+        <h2 class="section-title">About Me</h2>
+        <div class="glass card">
+            <p>I am a Computer Science and Engineering student at Medi-Caps University (B.Tech, 2024-2028) with a deep
+                focus on software engineering principles and architectural patterns.</p>
+            <p>Beyond modern frontend design, I specialize in full-stack Java enterprise development (Servlets,
+                Hibernate, Spring MVC, Struts) and Python frameworks like Django.</p>
+            <p>As the founder of <strong>EDUEXCHANGES</strong>, I bridge technical product strategy with visual
+                branding, working to engineer clean code and impactful products from the ground up.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section reveal">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card glass">
+                <i class="fab fa-java"></i>
+                <h3>Advanced Java & J2EE</h3>
+                <p>Spring MVC, Struts, Hibernate ORM, Servlets, JSP</p>
+            </div>
+            <div class="skill-card glass">
+                <i class="fab fa-python"></i>
+                <h3>Python & Django</h3>
+                <p>MVC Frameworks, Rest APIs, SQLite Data Persistence</p>
+            </div>
+            <div class="skill-card glass">
+                <i class="fas fa-code"></i>
+                <h3>Core Languages</h3>
+                <p>C++ (OOP, STL), C (IIT Bombay Certified), SQL</p>
+            </div>
+            <div class="skill-card glass">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Frontend Engineering</h3>
+                <p>HTML5, CSS3, JavaScript (ES6+), UI/UX Design</p>
+            </div>
+            <div class="skill-card glass">
+                <i class="fas fa-database"></i>
+                <h3>Databases & CS Core</h3>
+                <p>MySQL, Normalization (3NF/4NF), Data Structures & Algorithms</p>
+            </div>
+            <div class="skill-card glass">
+                <i class="fab fa-github"></i>
+                <h3>Developer Ecosystem</h3>
+                <p>Git, GitHub, Linux, Architecture Design Patterns</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card glass">
+                <div class="project-img"><i class="fas fa-charging-station fa-2x"></i></div>
+                <h3>Charge Fuel</h3>
+                <p>Dynamic EV charging and fuel delivery on-demand application web platform.</p>
+                <div class="tags">
+                    <span>Django</span><span>Python</span><span>SQLite</span><span>MVC</span>
+                </div>
+                <div class="project-buttons">
+                    <a href="https://github.com/nayan2427" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+
+            <div class="project-card glass">
+                <div class="project-img"><i class="fas fa-university fa-2x"></i></div>
+                <h3>Bank Ease</h3>
+                <p>Dynamic, secure web banking portal targeted for retired army officers.</p>
+                <div class="tags">
+                    <span>Java</span><span>Servlets</span><span>JSP</span><span>Struts</span><span>MySQL</span>
+                </div>
+                <div class="project-buttons">
+                    <a href="https://github.com/nayan2427" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+
+            <div class="project-card glass">
+                <div class="project-img"><i class="fas fa-taxi fa-2x"></i></div>
+                <h3>Eco Ride</h3>
+                <p>Multi-tier enterprise cab booking system using connection pooling and ORM mapping.</p>
+                <div class="tags">
+                    <span>Struts</span><span>Hibernate</span><span>Java Enterprise</span><span>MySQL</span>
+                </div>
+                <div class="project-buttons">
+                    <a href="https://github.com/nayan2427" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+
+            <div class="project-card glass">
+                <div class="project-img"><i class="fas fa-seedling fa-2x"></i></div>
+                <h3>Crop Health Scanner</h3>
+                <p>Full-stack dashboard processing environmental metrics for dynamic diagnostics.</p>
+                <div class="tags">
+                    <span>Java Servlets</span><span>JavaScript</span><span>HTML5/CSS3</span><span>MySQL</span>
+                </div>
+                <div class="project-buttons">
+                    <a href="https://github.com/nayan2427" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section reveal">
+        <h2 class="section-title">Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item glass">
+                <h3>Founder & Technical Lead — EDUEXCHANGES</h3>
+                <span class="timeline-date">Aug 2025 - Present</span>
+                <p>Conceptualized and launched a peer-reviewed engineering marketplace. Built the system end-to-end,
+                    handled product strategy, and executed visual branding campaigns.</p>
+            </div>
+            <div class="timeline-item glass">
+                <h3>Software Development Simulation — Deloitte</h3>
+                <span class="timeline-date">Oct 2025</span>
+                <p>Completed industry-aligned tasks modeled on real consultant workflows, focusing on architecture
+                    design and agile principles.</p>
+            </div>
+            <div class="timeline-item glass">
+                <h3>B.Tech in Computer Science & Engineering</h3>
+                <span class="timeline-date">Medi-Caps University | 2024 - 2028</span>
+                <p>Advanced study in Data Structures & Algorithms, Operating Systems architecture, Relational Databases,
+                    and Computer Networks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section reveal">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="glass">
+                <div id="form-status" class="form-status-hide"></div>
+                <div class="input-group">
+                    <input type="text" id="name" required autocomplete="off">
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required autocomplete="off">
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" rows="6" required autocomplete="off"></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="btn primary submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+            <div class="socials"
+                style="display: flex; justify-content: center; gap: 25px; margin-top: 30px; font-size: 1.5rem;">
+                <a href="https://github.com/nayan2427" target="_blank" aria-label="GitHub"
+                    style="color: var(--text-primary); transition: var(--transition);"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nvishwa2006/" target="_blank" aria-label="LinkedIn"
+                    style="color: var(--text-primary); transition: var(--transition);"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="mailto:nayan9691jai@gmail.com" aria-label="Email"
+                    style="color: var(--text-primary); transition: var(--transition);"><i
+                        class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Nayan Vishwakarma. Engineered with passion.</p>
+        <button id="topBtn" aria-label="Scroll to top">↑</button>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
