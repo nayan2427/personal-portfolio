@@ -1,3 +1,4 @@
+ 
 /* ==========================================================
    ALEX RIVERA — PORTFOLIO  |  style.css
    Design: Space/cosmos aesthetic · Sora + Inter typography
@@ -104,11 +105,9 @@ code {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition: none !important;
-    animation: none !important;
-  }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
 /* ----------------------------------------------------------
    2. TYPOGRAPHY
    ---------------------------------------------------------- */
@@ -1116,3 +1115,138 @@ section { padding: 100px 0; position: relative; }
   .hero-stats { flex-wrap: wrap; gap: 16px; }
   .stat-divider { display: none; }
 }
+  /* ── NAYAN-SPECIFIC OVERRIDES ── */
+
+  /* Hero layout: text left, 3D canvas right */
+  #home {
+    flex-direction: row;
+    gap: 48px;
+    align-items: center;
+    padding: var(--nav-h) clamp(24px, 6vw, 120px) 40px;
+    min-height: 100vh;
+  }
+
+  .hero-content { flex: 1; z-index: 1; }
+  .hero-right   {
+    flex: 1;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-height: 480px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Matrix canvas fills hero-right */
+  #webgl-matrix-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    border-radius: var(--radius-lg);
+    z-index: 0;
+  }
+
+  /* Profile photo circle over canvas */
+  .profile-circle {
+    position: relative;
+    z-index: 2;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 4px solid var(--violet);
+    box-shadow: 0 0 0 8px var(--violet-glow), var(--shadow-lg);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .profile-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .profile-placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-muted); }
+  .profile-placeholder i { font-size: 5rem; }
+  .profile-placeholder span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* Ticker pill */
+  .ticker-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 99px;
+    background: var(--violet-glow);
+    border: 1px solid rgba(124,58,237,0.3);
+    color: var(--violet-light);
+    margin-bottom: 20px;
+  }
+
+  /* Floating tech badges around profile */
+  .profile-badge {
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 99px;
+    color: #fff;
+    box-shadow: var(--shadow-md);
+    z-index: 3;
+    animation: float 3s ease-in-out infinite;
+  }
+  .pb-java   { top: 18%; right: 5%;  background: linear-gradient(135deg,#e34c26,#ef652a); animation-delay:0s; }
+  .pb-python { bottom: 22%; right: 2%; background: linear-gradient(135deg,#264de4,#2965f1); animation-delay:0.7s; }
+  .pb-spring { top: 12%; left: 8%;  background: linear-gradient(135deg,#f7df1e,#f0c000); color:#111; animation-delay:1.4s; }
+  .pb-django { bottom: 15%; left: 5%; background: linear-gradient(135deg,#7c3aed,#06b6d4); animation-delay:0.4s; }
+
+  /* Experience / timeline tweaks */
+  .timeline-date {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--violet-light);
+    background: var(--violet-glow);
+    padding: 3px 10px;
+    border-radius: 99px;
+    display: inline-block;
+    margin: 6px 0 10px;
+  }
+
+  /* EDUEXCHANGES highlight */
+  .highlight-brand {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  /* Contact socials */
+  .socials-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .social-pill {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-card);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all var(--transition);
+  }
+  .social-pill i { font-size: 1.1rem; }
+  .social-pill:hover { border-color: var(--violet); color: var(--violet-light); background: var(--violet-glow); transform: translateY(-3px); }
+
+  /* Mobile hero stacking */
+  @media (max-width: 900px) {
+    #home { flex-direction: column; padding: calc(var(--nav-h) + 32px) 24px 60px; min-height: auto; }
+    .hero-content { padding-top: 0; text-align: center; }
+    .hero-content .hero-btns { justify-content: center; }
+    .hero-content .hero-stats { justify-content: center; }
+    .hero-right { width: 100%; aspect-ratio: 4/3; max-height: 320px; }
+    .profile-circle { width: 220px; height: 220px; }
+    .hero-content .hero-intro { margin-left: auto; margin-right: auto; }
+  }
+  
