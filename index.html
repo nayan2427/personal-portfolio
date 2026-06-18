@@ -940,11 +940,12 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
   );
 
-  elements.forEach((el, i) => {
-    // Stagger delay based on DOM order within parent
-    const siblings  = $$('.reveal', el.parentElement);
-    const siblIdx   = siblings.indexOf(el);
-    el.style.transitionDelay = (siblIdx * 0.08) + 's';
+  elements.forEach(el => {
+    // Stagger via opacity-only delay so it doesn't slow down
+    // hover/focus transitions on the same element later.
+    const siblings = $$('.reveal', el.parentElement);
+    const siblIdx  = siblings.indexOf(el);
+    el.style.setProperty('--reveal-delay', (siblIdx * 0.08) + 's');
     observer.observe(el);
   });
 })();
